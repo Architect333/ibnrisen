@@ -1,0 +1,55 @@
+---
+### WAN 1 ###
+R11:
+  ip_address: 192.168.10.101
+  platform: Cisco
+  username: admin
+  password: C1sco12345
+  geolocation:
+    - longitude: -59.13
+    - latitude: -37.32
+  neighbors:
+    - Eth0/0: R12
+    - Eth1/1: R21
+    - Eth1/2: R22
+
+R12:
+  ip_address: 192.168.10.102
+  platform: Cisco
+  username: admin
+  password: C1sco12345
+  geolocation:
+    - longitude: -58.51
+    - latitude: -33.00
+  neighbors:
+    - Eth0/0: R11
+    - Eth1/1: R21
+    - Eth1/2: R22
+
+### WAN 2 ###
+R21:
+  ip_address: 192.168.20.101
+  platform: Cisco
+  username: admin
+  password: C1sco12345
+  geolocation:
+    - longitude: -68.84
+    - latitude: -32.88
+  neighbors:
+    - Eth0/0: R22
+    - Eth1/1: R11
+    - Eth1/2: R12
+
+R22:
+  ip_address: 192.168.20.102
+  platform: Cisco
+  username: admin
+  password: C1sco12345
+  geolocation:
+    - longitude: -67.61
+    - latitude: -40.48
+  neighbors:
+    - Eth0/0: R21
+    - Eth1/1: R11
+    - Eth1/2: R12
+...
