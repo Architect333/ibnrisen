@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
 TEXT_COLOR = {
     'ERROR': '\033[91m',
     'OK': '\33[32m',
+    'OBSERVER': '\033[95m',
     'END': '\033[0m'
     }
 

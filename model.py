@@ -2,8 +2,9 @@ from settings import TEXT_COLOR
 from settings import DB_ACCESS
 from settings import DB_NAME
 from checks import InputCheck
+from observer import Subject
 
-import os
+#import os
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -101,9 +102,10 @@ def DecoradorActualizacionRegistro(funcion):
     wrapper.count = 0
     return wrapper
 
-class DatabaseORM():
+class DatabaseORM(Subject):
     """
     Utilizacion de ORM Peewee para interactuar con MySQL Database
+    Extiendo la clase de Subject para utilizar el Patrón Observador
     """
     
     def __init__(self):
@@ -123,6 +125,7 @@ class DatabaseORM():
         try:
             inventory.save()
             print(TEXT_COLOR['OK'] + "Record added successfully! \n" + TEXT_COLOR['END'])
+            self.notify("Create")   # Notify Observer
         except Exception as e:
             print(TEXT_COLOR['ERROR'] + "***ERROR*** Record can't be created! " + str(e) + "\n" + TEXT_COLOR['END'])
 
@@ -145,7 +148,9 @@ class DatabaseORM():
         
         if inventory_data == []:
             print(TEXT_COLOR['ERROR'] + "***ERROR*** No records found!\n" + TEXT_COLOR['END'])
+        self.notify("Read")   # Notify Observer
         return inventory_data
+        
 
 
     @DecoradorActualizacionRegistro
@@ -182,6 +187,7 @@ class DatabaseORM():
             try:
                 update.execute()
                 print(TEXT_COLOR['OK'] + "Record updated successfully! \n" + TEXT_COLOR['END'])
+                self.notify("Update")   # Notify Observer
             except Exception as e:
                 print(TEXT_COLOR['ERROR'] + "*** ERROR *** Record can't be updated! " + str(e) + "\n" + TEXT_COLOR['END'])
 
@@ -194,6 +200,7 @@ class DatabaseORM():
                 borrar = Inventory.get(Inventory.id == id)
                 borrar.delete_instance()
                 print(TEXT_COLOR['OK'] + "Record removed successfully! \n" + TEXT_COLOR['END'])
+                self.notify("Delete")   # Notify Observer
             except Exception as e:
                 print(TEXT_COLOR['ERROR'] + "*** ERROR *** Record can't be removed! " + str(e) + "\n" + TEXT_COLOR['END'])
         else:

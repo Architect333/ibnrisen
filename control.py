@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import folium
 import geojson
 import geopandas
+import observer
 from settings import TEXT_COLOR
 
 
@@ -21,15 +22,16 @@ class IBNControl():
     """
 
     def __init__(self) -> None:
-        args_setup = view.ArgsSetup()
-        self.args_control = args_setup.args_setup()
-        
+        self.args_setup = view.ArgsSetup()
+        self.args_control = self.args_setup.args_setup()
+
         self.action = self.args_control[0]
         self.inventory = self.args_control[1]
         self.create_configs = self.args_control[2]
         self.create_matrix = self.args_control[3]
 
         self.db_instance = model.DatabaseORM()
+        self.observer = observer.CRUD_Observer(self.db_instance)    # Observe Data Base CRUD
 
         if self.action == "create":
             self.create_inventory()
