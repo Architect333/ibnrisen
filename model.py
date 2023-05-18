@@ -4,7 +4,6 @@ from settings import DB_NAME
 from checks import InputCheck
 from observer import Subject
 
-#import os
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
