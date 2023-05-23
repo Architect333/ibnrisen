@@ -1,5 +1,5 @@
 import re
-from settings import TEXT_COLOR
+from src.config.settings import TEXT_COLOR
 
 class InputCheck():
     """

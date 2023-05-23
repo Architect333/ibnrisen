@@ -1,4 +1,4 @@
-from settings import TEXT_COLOR
+from src.config.settings import TEXT_COLOR
 
 # General Subject Class
 class Subject:

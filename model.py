@@ -1,8 +1,8 @@
-from settings import TEXT_COLOR
-from settings import DB_ACCESS
-from settings import DB_NAME
-from checks import InputCheck
-from observer import Subject
+from src.config.settings import TEXT_COLOR
+from src.config.settings import DB_ACCESS
+from src.config.settings import DB_NAME
+from src.services.checks import InputCheck
+from src.services.observer import Subject
 
 import pandas as pd
 import networkx as nx

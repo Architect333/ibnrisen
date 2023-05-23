@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import folium
 import geojson
 import geopandas
-import observer
-from settings import TEXT_COLOR
+import src.services.observer
+from src.config.settings import TEXT_COLOR
 
 
 class IBNControl():
@@ -167,4 +167,4 @@ class IBNControl():
 
 
 if __name__ == "__main__":
-    pass
+    ibn_run = IBNControl()
