@@ -1,0 +1,15 @@
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-59.13, -37.32], [-58.51, -33.0]]}, "properties": {"Circuito": "R11-R12"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-59.13, -37.32], [-68.84, -32.88]]}, "properties": {"Circuito": "R11-R21"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-59.13, -37.32], [-67.61, -40.48]]}, "properties": {"Circuito": "R11-R22"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-58.51, -33.0], [-59.13, -37.32]]}, "properties": {"Circuito": "R12-R11"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-58.51, -33.0], [-68.84, -32.88]]}, "properties": {"Circuito": "R12-R21"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-58.51, -33.0], [-67.61, -40.48]]}, "properties": {"Circuito": "R12-R22"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-68.84, -32.88]]}, "properties": {"Circuito": "R22-R21"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-59.13, -37.32]]}, "properties": {"Circuito": "R22-R11"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-58.51, -33.0]]}, "properties": {"Circuito": "R22-R12"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-68.84, -32.88], [-67.61, -40.48]]}, "properties": {"Circuito": "R21-R22"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-68.84, -32.88], [-59.13, -37.32]]}, "properties": {"Circuito": "R21-R11"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-68.84, -32.88], [-58.51, -33.0]]}, "properties": {"Circuito": "R21-R12"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-68.84, -32.88]]}, "properties": {"Circuito": "R22-R21"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-59.13, -37.32]]}, "properties": {"Circuito": "R22-R11"}}
+{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-67.61, -40.48], [-58.51, -33.0]]}, "properties": {"Circuito": "R22-R12"}}

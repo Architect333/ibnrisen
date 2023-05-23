@@ -1,3 +1,5 @@
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-59.13, -37.32]}, "properties": {"Hostname": "R11"}}
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-58.51, -33.0]}, "properties": {"Hostname": "R12"}}
 {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-50.0, -20.0]}, "properties": {"Hostname": "nuevo_hostname"}}
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-68.84, -32.88]}, "properties": {"Hostname": "R21"}}
+{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-67.61, -40.48]}, "properties": {"Hostname": "R22"}}

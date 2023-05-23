@@ -10,8 +10,9 @@ import matplotlib.pyplot as plt
 import folium
 import geojson
 import geopandas
-import src.services.observer
+import src.services.observer as observer
 from src.config.settings import TEXT_COLOR
+from src.config.logging import logger
 
 
 class IBNControl():
@@ -89,11 +90,11 @@ class IBNControl():
 
         try:
 
-            if os.path.exists('geo_nodes.json'):
-                os.remove('geo_nodes.json')
+            if os.path.exists('src/files/geo_nodes.json'):
+                os.remove('src/files/geo_nodes.json')
 
-            if os.path.exists('geo_edges.json'):
-                os.remove('geo_edges.json')
+            if os.path.exists('src/files/geo_edges.json'):
+                os.remove('src/files/geo_edges.json')
             
             inventory = self.db_instance.read_inventory()
             geo_neighborship = []
@@ -115,7 +116,7 @@ class IBNControl():
                     properties = {'Hostname': hostname}
                     )
 
-                with open('geo_nodes.json', 'a') as geo_nodes_file:
+                with open('src/files/geo_nodes.json', 'a') as geo_nodes_file:
                     geojson.dump(node_feature, geo_nodes_file)
                     geo_nodes_file.write('\n')
 
@@ -134,7 +135,7 @@ class IBNControl():
                     properties = { 'Circuito': str(geo_edge[0] + "-" + geo_edge[1]) }
                     )
 
-                with open('geo_edges.json', 'a') as geo_edges_file:
+                with open('src/files/geo_edges.json', 'a') as geo_edges_file:
                     geojson.dump(edge_feature, geo_edges_file)
                     geo_edges_file.write('\n')
 
@@ -147,11 +148,16 @@ class IBNControl():
             plt.show()
 
 
-            geo_data_frame_nodes = geopandas.read_file('geo_nodes.json')
-            geo_data_frame_edges = geopandas.read_file('geo_edges.json')
+            geo_data_frame_nodes = geopandas.read_file('src/files/geo_nodes.json')
+            geo_data_frame_edges = geopandas.read_file('src/files/geo_edges.json')
 
+            print("\n")
+            logger.info("Listing Nodes")
             print(geo_data_frame_nodes)
+            print("\n")
+            logger.info("Listing Edges")
             print(geo_data_frame_edges)
+            print("\n")
 
             html_explore_map = geo_data_frame_nodes.explore(color="black", marker_kwds=dict(radius=15, fill=True), name="routers")
             geo_data_frame_edges.explore(m=html_explore_map, color="green", style_kwds=dict(weight=4), name="circuits")
@@ -159,7 +165,7 @@ class IBNControl():
             folium.TileLayer('Stamen Toner', control=True).add_to(html_explore_map)
             folium.LayerControl().add_to(html_explore_map)
 
-            html_explore_map.save('index.html')
+            html_explore_map.save('www/index.html')
 
         except Exception as e:
             print(TEXT_COLOR['ERROR'] + "*** ERROR *** Matrix can't be created! " + str(e) + "\n" + TEXT_COLOR['END'])

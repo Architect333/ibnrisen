@@ -1,22 +1,18 @@
 import asyncio
 import uvicorn
-from fastapi import FastAPI, status
+from src.services.api import AppSwagger
 
-geograph_api = FastAPI()
-
-@geograph_api.get("/", status_code = status.HTTP_200_OK)
-async def geograph():
-    return {"message": "Hello World"}
-    #return index.html
+launch_api = AppSwagger()
+launch_api.register_apis()
 
 async def main():
     config = uvicorn.Config(
-        'server:geograph_api',
+        launch_api,
         host = 'localhost',
         port = 8000,
         workers = 5,
         log_level = 'debug',
-        reload = True
+        reload = False
         )
     server = uvicorn.Server(config)
 
