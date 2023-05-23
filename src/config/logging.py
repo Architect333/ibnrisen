@@ -1,3 +1,7 @@
+"""
+Define logging with different colors depending on Log Facility.
+"""
+
 import colorlog
 
 """

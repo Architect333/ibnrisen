@@ -1,3 +1,7 @@
+"""
+MVC Pattern: Model module, using peewee to access MySQL database and Decorators to capture and log Database Operations.
+"""
+
 from src.config.settings import TEXT_COLOR
 from src.config.settings import DB_ACCESS
 from src.config.settings import DB_NAME

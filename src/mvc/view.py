@@ -1,3 +1,7 @@
+"""
+MVC Pattern: View module, parsing CLI arguments.
+"""
+
 import argparse
 import sys
 

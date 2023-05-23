@@ -1,3 +1,7 @@
+"""
+Define settings to be used in the App.
+"""
+
 import os
 
 ## DEFINE PATH ##

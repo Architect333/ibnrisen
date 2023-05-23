@@ -1,3 +1,7 @@
+"""
+Observer Pattern Classes to Monitor CRUD operations in Database.
+"""
+
 from src.config.settings import TEXT_COLOR
 
 # General Subject Class

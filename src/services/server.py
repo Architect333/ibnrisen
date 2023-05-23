@@ -1,3 +1,7 @@
+"""
+Main AsyncIO coroutine to launch Web Server.
+"""
+
 import asyncio
 import uvicorn
 from src.services.api import AppSwagger

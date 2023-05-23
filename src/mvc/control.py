@@ -1,3 +1,7 @@
+"""
+MVC Pattern: Control module, with all the logic to control database access and topology creation.
+"""
+
 import yaml
 from getpass import getpass
 import src.mvc.view as view

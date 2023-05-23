@@ -1,3 +1,7 @@
+"""
+Input checks for IP address and GeoLocation.
+"""
+
 import re
 from src.config.settings import TEXT_COLOR
 

@@ -1,3 +1,7 @@
+"""
+API Swagger Class and configuration.
+"""
+
 from fastapi import FastAPI
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse, FileResponse
