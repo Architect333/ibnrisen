@@ -13,7 +13,8 @@ import geopandas
 import src.services.observer as observer
 from src.config.settings import TEXT_COLOR
 from src.config.logging import logger
-
+import src.services.server as server
+import asyncio
 
 class IBNControl():
     """
@@ -151,10 +152,10 @@ class IBNControl():
             geo_data_frame_nodes = geopandas.read_file('src/files/geo_nodes.json')
             geo_data_frame_edges = geopandas.read_file('src/files/geo_edges.json')
 
-            print("\n")
+            print("")
             logger.info("Listing Nodes")
             print(geo_data_frame_nodes)
-            print("\n")
+            print("")
             logger.info("Listing Edges")
             print(geo_data_frame_edges)
             print("\n")
@@ -166,6 +167,12 @@ class IBNControl():
             folium.LayerControl().add_to(html_explore_map)
 
             html_explore_map.save('www/index.html')
+            logger.debug("Browse http://localhost:8000/docs for API Swagger")
+            logger.debug("Browse http://localhost:8000/geograph for Geolocated Topology Drawing")
+            print("")
+
+            asyncio.run(server.main())
+            
 
         except Exception as e:
             print(TEXT_COLOR['ERROR'] + "*** ERROR *** Matrix can't be created! " + str(e) + "\n" + TEXT_COLOR['END'])
