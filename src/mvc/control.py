@@ -1,7 +1,7 @@
 import yaml
 from getpass import getpass
-import view
-import model
+import src.mvc.view as view
+import src.mvc.model as model
 import os
 import pprint as pp
 import pandas as pd
@@ -167,4 +167,4 @@ class IBNControl():
 
 
 if __name__ == "__main__":
-    ibn_run = IBNControl()
+    pass

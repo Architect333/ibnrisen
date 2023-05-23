@@ -1,7 +1,8 @@
 # ibnrisen
 Diplomatura Python UTN
 
-Requires MySQL Database Service
+# Tested in local XAMPP MySQL Database Instance
+*Requires local MySQL Database Service* 
 
 
 # COMMAND LINE TOOL
