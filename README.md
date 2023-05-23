@@ -20,6 +20,6 @@ Help: python ibnrisen.py -h
 
 - CREATE Inventory in MySQL Database importing from yaml file: *python ibnrisen.py -c hosts.yaml*
 - READ Inventory: *python ibnrisen.py -r*
-- UPDATE Inventory: *python ibnrisen.py -u [ID]*
-- DELETE Inventory: *python ibnrisen.py -d [ID]*
+- UPDATE Inventory: *python ibnrisen.py -u [RECORD_ID]*
+- DELETE Inventory: *python ibnrisen.py -d [RECORD_ID]*
 - DRAW TOPOLOGY: *python ibnrisen.py -m*
